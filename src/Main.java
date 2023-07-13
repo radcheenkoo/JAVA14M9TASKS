@@ -4,7 +4,8 @@ public class Main {
 //        first();
 //        second();
 //        third();
-        fourth();
+//        fourth();
+        fifth();
     }
     public static void first(){
         MyArrayList<Integer> list = new MyArrayList<>();
@@ -79,6 +80,23 @@ public class Main {
 
     }
     public static void fifth(){
+        MyHashMap<Integer, String> myHashMap = new MyHashMap<>(1);
+        myHashMap.put(1,"dima");
+        myHashMap.put(2, "dasha");
+        myHashMap.put(3,"sasha");
+        myHashMap.put(4,"denis");
+
+        myHashMap.remove(4);
+
+        for (int i = 1; i < myHashMap.size() + 1; i++) {
+            System.out.println(myHashMap.get(i));
+        }
+
+        myHashMap.clear();
+
+        for (int i = 1; i < myHashMap.size() + 1; i++) {
+            System.out.println(myHashMap.get(i));
+        }
 
     }
 }
