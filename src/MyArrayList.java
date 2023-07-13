@@ -17,6 +17,9 @@ public class MyArrayList<T> {
     }
 
     public void remove(int index){
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index out of range: " + index);
+        }
 
         for(int i = index; i < size - 1; i++){
             arr[i] = arr[i + 1];
@@ -32,6 +35,9 @@ public class MyArrayList<T> {
         return size;
     }
     public T getValue(int index){
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index out of range: " + index);
+        }
         return arr[index];
     }
 }

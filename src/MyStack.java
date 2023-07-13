@@ -71,6 +71,9 @@ public class MyStack<E> {
         return value;
     }
     private MyStack<E>.Node getNodeAtIndex(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index out of range: " + index);
+        }
         MyStack<E>.Node currentNode = first;
         for (int i = 0; i < index; i++) {
             currentNode = currentNode.next;
