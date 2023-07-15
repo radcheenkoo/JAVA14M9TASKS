@@ -1,13 +1,15 @@
 public class Main {
 
     public static void main(String[] args) {
-//        first();
-//        second();
-//        third();
-//        fourth();
-        fifth();
+//        myArrayListTest();
+//        myLinkedListTest();
+//        myQueueTest();
+//        myStackTest();
+        myHashMapTest();
+
+
     }
-    public static void first(){
+    public static void myArrayListTest(){
         MyArrayList<Integer> list = new MyArrayList<>();
         list.add(2);
         list.add(3);
@@ -23,14 +25,26 @@ public class Main {
         list.add(54);
 
 
-        for (int i = 0; i < list.getSize(); i++){
+        for (int i = 0; i < list.size(); i++){
+            System.out.println(list.getValue(i));
+        }
+
+        list.remove(3);
+        list.remove(6);
+        list.remove(4);
+
+        for (int i = 0; i < list.size(); i++){
+            System.out.println(list.getValue(i));
+        }
+
+        list.clear();
+
+        for (int i = 0; i < list.size(); i++){
             System.out.println(list.getValue(i));
         }
     }
-    public static void second(){
+    public static void myLinkedListTest(){
         MyLinkedList<String> list = new MyLinkedList<>();
-        list.add("3");
-        System.out.println(list.get(0));
         list.add("fwofn");
         list.add("fgegersd");
         list.add("sfdgen");
@@ -40,9 +54,24 @@ public class Main {
         for (int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i));
         }
-        System.out.println(list.get(4));
+
+        list.remove(3);
+        list.remove(2);
+
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
+        }
+
+        System.out.println(list.size());
+
+        list.clear();
+
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
+        }
+
     }
-    public static void third(){
+    public static void myQueueTest(){
         MyQueue<String> queue = new MyQueue<>();
 
         queue.add("elvis");
@@ -57,8 +86,14 @@ public class Main {
         System.out.println(queue.peek());
         System.out.println(queue.poll());
         System.out.println(queue.peek());
+
+        System.out.println(queue.size());
+
+        queue.clear();
+
+        System.out.println(queue.size());
     }
-    public static void fourth(){
+    public static void myStackTest(){
         MyStack<String> stack = new MyStack<>();
         stack.push("fgd");
         stack.push("gsgdffgd");
@@ -75,16 +110,29 @@ public class Main {
         System.out.println(stack.peek());
 
         stack.remove(1);
+        stack.remove(4);
+        stack.remove(3);
+
+        System.out.println(stack.size());
+
+        stack.clear();
 
         System.out.println(stack.size());
 
     }
-    public static void fifth(){
-        MyHashMap<Integer, String> myHashMap = new MyHashMap<>(1);
+    public static void myHashMapTest(){
+        MyHashMap<Integer, String> myHashMap = new MyHashMap<>();
         myHashMap.put(1,"dima");
         myHashMap.put(2, "dasha");
         myHashMap.put(3,"sasha");
-        myHashMap.put(4,"denis");
+        myHashMap.put(5,"denisfds");
+        myHashMap.put(6,"denisdfs");
+        myHashMap.put(7,"denisdfsfrs");
+        myHashMap.put(8,"deniefsss");
+        myHashMap.put(9,"denisdfes");
+        myHashMap.put(10,"denisefseffbd");
+        myHashMap.put(11,"denisfefwsad");
+        myHashMap.put(12,"denisefthrt");
 
         myHashMap.remove(4);
 

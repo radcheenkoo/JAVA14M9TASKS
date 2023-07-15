@@ -31,9 +31,7 @@ public class MyLinkedList<T> {
         }
 
         public void remove(int index) {
-            if (index < 0 || index >= size) {
-                throw new IndexOutOfBoundsException("Index out of range: " + index);
-            }
+            indexCheck(index);
 
             Node nodeToRemove = getNodeAtIndex(index);
 
@@ -60,9 +58,7 @@ public class MyLinkedList<T> {
         }
 
         public T get(int index) {
-            if (index < 0 || index >= size) {
-                throw new IndexOutOfBoundsException("Index out of range: " + index);
-            }
+            indexCheck(index);
 
             Node node = getNodeAtIndex(index);
 
@@ -77,5 +73,10 @@ public class MyLinkedList<T> {
             }
             return currentNode;
         }
+    private void indexCheck(int index){
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index out of range: " + index);
+        }
     }
+}
 

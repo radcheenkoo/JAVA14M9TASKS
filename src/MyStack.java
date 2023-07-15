@@ -27,11 +27,12 @@ public class MyStack<E> {
 
         size++;
     }
+    public void clear() {
+        first = null;
+        second = null;
+        size = 0;
+    }
     public void remove(int index) {
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("Index out of range: " + index);
-        }
-
         MyStack.Node nodeToRemove = getNodeAtIndex(index);
 
         if (nodeToRemove == first) {
@@ -71,13 +72,16 @@ public class MyStack<E> {
         return value;
     }
     private MyStack<E>.Node getNodeAtIndex(int index) {
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("Index out of range: " + index);
-        }
+        indexCheck(index);
         MyStack<E>.Node currentNode = first;
         for (int i = 0; i < index; i++) {
             currentNode = currentNode.next;
         }
         return currentNode;
+    }
+    private void indexCheck(int index){
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index out of range: " + index);
+        }
     }
 }
