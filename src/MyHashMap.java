@@ -6,6 +6,7 @@ public class MyHashMap<T,E> {
 
     private Node[] arr;
     private int size;
+
     public MyHashMap() {
         arr = new Node[DEFAULT_CAPACITY];
         size = 0;
@@ -113,46 +114,35 @@ public class MyHashMap<T,E> {
         arr = newArr;
     }
 
-    private static class Node {
-        private Object key;
-        private Object value;
+    class Node<T, E> {
+        private T key;
+        private E value;
         private Node next;
 
-        public Node(Object key, Object value) {
+        public Node(T key, E value) {
             this.key = key;
             this.value = value;
             this.next = null;
         }
-    }
-}
-class Node<T,E> {
-    private T key;
-    private E value;
-    private Node next;
 
-    public Node(T key, E value) {
-        this.key = key;
-        this.value = value;
-        this.next = null;
-    }
+        public T getKey() {
+            return key;
+        }
 
-    public T getKey() {
-        return key;
-    }
+        public E getValue() {
+            return value;
+        }
 
-    public E getValue() {
-        return value;
-    }
+        public void setValue(E value) {
+            this.value = value;
+        }
 
-    public void setValue(E value) {
-        this.value = value;
-    }
+        public Node getNext() {
+            return next;
+        }
 
-    public Node getNext() {
-        return next;
-    }
-
-    public void setNext(Node next) {
-        this.next = next;
+        public void setNext(Node next) {
+            this.next = next;
+        }
     }
 }
